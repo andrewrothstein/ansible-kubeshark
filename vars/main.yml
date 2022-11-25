@@ -1,0 +1,8 @@
+---
+# vars file for kubeshark
+kubeshark_platform: '{{ kubeshark_os }}_{{ kubeshark_arch }}'
+kubeshark_arch: '{{ kubeshark_arch_map[ansible_architecture] }}'
+kubeshark_url: '{{ kubeshark_mirror }}/{{ kubeshark_ver }}/kubeshark_{{ kubeshark_platform }}'
+kubeshark_checksum: '{{ kubeshark_checksums[kubeshark_ver][kubeshark_platform] }}'
+kubeshark_install_exe: '{{ kubeshark_install_dir }}/kubeshark_{{ kubeshark_ver }}_{{ kubeshark_platform }}'
+kubeshark_link: '{{ kubeshark_install_dir }}/kubeshark'
