@@ -7,4 +7,4 @@
     register: kubeshark_test_output
   - name: kubeshark version
     debug:
-      msg: '{{ kubeshark_test_output.stderr }}'
+      msg: '{{ kubeshark_test_output.stdout }}'
