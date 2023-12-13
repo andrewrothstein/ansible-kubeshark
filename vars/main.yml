@@ -3,7 +3,12 @@
 kubeshark_os: '{{ ansible_system | lower }}'
 kubeshark_arch: '{{ kubeshark_arch_map[ansible_architecture] }}'
 kubeshark_platform: '{{ kubeshark_os }}_{{ kubeshark_arch }}'
-kubeshark_url: '{{ kubeshark_mirror }}/{{ kubeshark_ver }}/kubeshark_{{ kubeshark_platform }}'
+kubeshark_prefix: kubeshark_{{ kubeshark_ver }}_{{ kubeshark_platform }}
+kubeshark_archive: '{{ kubeshark_prefix }}.tar.gz'
+kubeshark_tmp_archive: '{{ kubeshark_tmp_dir | default("/tmp") }}/{{ kubeshark_archive }}'
+kubeshark_url: '{{ kubeshark_mirror }}/v{{ kubeshark_ver }}/{{ kubeshark_archive }}'
 kubeshark_checksum: '{{ kubeshark_checksums[kubeshark_ver][kubeshark_platform] }}'
-kubeshark_install_exe: '{{ kubeshark_install_dir }}/kubeshark_{{ kubeshark_ver }}_{{ kubeshark_platform }}'
-kubeshark_link: '{{ kubeshark_install_dir }}/kubeshark'
+
+kubeshark_install_dir: '{{ kubeshark_parent_install_dir }}/{{ kubeshark_prefix }}'
+kubeshark_exe: '{{ kubeshark_install_dir }}/kubeshark'
+kubeshark_link: '{{ kubeshark_parent_install_dir }}/bin/kubeshark'

@@ -1,88 +1,31 @@
 ---
 # defaults file for kubeshark
-kubeshark_ver: '50.4'
+kubeshark_ver: '51.0.39'
 kubeshark_mirror: https://github.com/kubeshark/kubeshark/releases/download
 kubeshark_arch_map:
   aarch64: arm64
   arm64: arm64
+  x86_32: '386'
   x86_64: amd64
-kubeshark_install_dir: /usr/local/bin
+
+kubeshark_parent_install_dir: /usr/local
 
 kubeshark_checksums:
-  '37.0':
-    # https://github.com/kubeshark/kubeshark/releases/download/37.0/kubeshark_darwin_amd64.sha256
-    darwin_amd64: sha256:b72e48460405d51d982211605dc98861fe06bed858c08fd02f480a1d410bc7b6
-    # https://github.com/kubeshark/kubeshark/releases/download/37.0/kubeshark_darwin_arm64.sha256
-    darwin_arm64: sha256:409526dbe5c3a6f6480d9ebccc480046266db98312bb05c3e10262be781cd50a
-    # https://github.com/kubeshark/kubeshark/releases/download/37.0/kubeshark_linux_amd64.sha256
-    linux_amd64: sha256:fb4bf8be97f3be0f67cea9679819f7bfdc66d14bd1683f04affe441d37e29885
-    # https://github.com/kubeshark/kubeshark/releases/download/37.0/kubeshark_linux_arm64.sha256
-    linux_arm64: sha256:1b0aacd226b74818928319d61b15b44684f22b692896c17fca811f598079fcba
-    # https://github.com/kubeshark/kubeshark/releases/download/37.0/kubeshark_windows_amd64.sha256
-    windows_amd64: sha256:d110288d896af03ea8780a1b81275d192bc0b07c6335906c4b95d067db2ce2f4
-  '38.0':
-    # https://github.com/kubeshark/kubeshark/releases/download/38.0/kubeshark_darwin_amd64.sha256
-    darwin_amd64: sha256:cb10c96a9e3899971ce9647e020a1985d552a429b4e45d35141df2d6b3330002
-    # https://github.com/kubeshark/kubeshark/releases/download/38.0/kubeshark_darwin_arm64.sha256
-    darwin_arm64: sha256:bf9545103db96b700cf389970a604d0f2fdeb1da6b83bbd08a5935a97b54b6a0
-    # https://github.com/kubeshark/kubeshark/releases/download/38.0/kubeshark_linux_amd64.sha256
-    linux_amd64: sha256:b14439e380a972d33791205755a8dbfe9c854b73b6c1f7db40c8a689cf4119b6
-    # https://github.com/kubeshark/kubeshark/releases/download/38.0/kubeshark_linux_arm64.sha256
-    linux_arm64: sha256:b21f3020386cf369fbc8deee25ecfe4fa17fe454706dd946c66bb1feb291738b
-    # https://github.com/kubeshark/kubeshark/releases/download/38.0/kubeshark_windows_amd64.sha256
-    windows_amd64: sha256:b34199daa9f0c1ce8b944f1af0af426ef23386ee70a274393b880b0ad4f8215c
-  '39.0':
-    # https://github.com/kubeshark/kubeshark/releases/download/39.0/kubeshark_darwin_amd64.sha256
-    darwin_amd64: sha256:b39ea9f4ab5dab1e19635c836caea3380df9820767776d36a6c08a6c09d16a92
-    # https://github.com/kubeshark/kubeshark/releases/download/39.0/kubeshark_darwin_arm64.sha256
-    darwin_arm64: sha256:1b8957d26c29c1294fdf8f569797d615ace46eb970570af6809b780e7b8acac2
-    # https://github.com/kubeshark/kubeshark/releases/download/39.0/kubeshark_linux_amd64.sha256
-    linux_amd64: sha256:6b2857ad7e8186495842888a82d5ef556c3af4d42cd14daa6aa7681b6c6ea0e4
-    # https://github.com/kubeshark/kubeshark/releases/download/39.0/kubeshark_linux_arm64.sha256
-    linux_arm64: sha256:ebcd7e4b3ff2f593b3184c841fdf4828e6d2f65154769657cf320ba0bd23cc12
-    # https://github.com/kubeshark/kubeshark/releases/download/39.0/kubeshark_windows_amd64.sha256
-    windows_amd64: sha256:fa9ebc873dd47e505e3a6c5ce6a37f212984a4ad4173955237fbc43be9adba95
-  '40.0':
-    # https://github.com/kubeshark/kubeshark/releases/download/40.0/kubeshark_darwin_amd64.sha256
-    darwin_amd64: sha256:ff930b611a4a2fa90d2642308591fb9494a50620314b2a9c4788300adcc95686
-    # https://github.com/kubeshark/kubeshark/releases/download/40.0/kubeshark_darwin_arm64.sha256
-    darwin_arm64: sha256:7914de110483cfab20c58ed0a2c04668570a852d422876b8d50f9d01b2d9c0e9
-    # https://github.com/kubeshark/kubeshark/releases/download/40.0/kubeshark_linux_amd64.sha256
-    linux_amd64: sha256:c64f8489bcf4b455d20d5818de8e194f751a6b89c5d3e6619c99c49372863ebc
-    # https://github.com/kubeshark/kubeshark/releases/download/40.0/kubeshark_linux_arm64.sha256
-    linux_arm64: sha256:b889cc9dd0850d6f7537b5389b4ec31b7d11934df003a0c26117dc44fbfefcf5
-    # https://github.com/kubeshark/kubeshark/releases/download/40.0/kubeshark_windows_amd64.sha256
-    windows_amd64: sha256:3f453ee6e67994cf88099deda27e4e83e43f0fa882bb87609ca2ac02b092d210
-  '40.5':
-    # https://github.com/kubeshark/kubeshark/releases/download/40.5/kubeshark_darwin_amd64.sha256
-    darwin_amd64: sha256:b6afc7902be1df4ec525fd6be05120279f9d1683a5c05681e260051056579414
-    # https://github.com/kubeshark/kubeshark/releases/download/40.5/kubeshark_darwin_arm64.sha256
-    darwin_arm64: sha256:1ca4b7996073d77dd0faa3ddec1bd5826684ab2c0c768c759d5aaf43e13e037e
-    # https://github.com/kubeshark/kubeshark/releases/download/40.5/kubeshark_linux_amd64.sha256
-    linux_amd64: sha256:e9d112d4287438b4c04c3d8045f836c821e95e417d130aacf64c161e9ca8f164
-    # https://github.com/kubeshark/kubeshark/releases/download/40.5/kubeshark_linux_arm64.sha256
-    linux_arm64: sha256:71351434def47939d9017024cc778f45eff4d9639d6db0c0e2ede5edb2436cda
-    # https://github.com/kubeshark/kubeshark/releases/download/40.5/kubeshark_windows_amd64.sha256
-    windows_amd64: sha256:45cf4bf2f2ebdc147246f738486e09ae4447345439415abdc28c8cf62e5bd855
-  '50.0':
-    # https://github.com/kubeshark/kubeshark/releases/download/50.0/kubeshark_darwin_amd64.sha256
-    darwin_amd64: sha256:c6f75ffbd6025bdf021595f0ac902f5580aefa8aebda53950952c6f994804d0f
-    # https://github.com/kubeshark/kubeshark/releases/download/50.0/kubeshark_darwin_arm64.sha256
-    darwin_arm64: sha256:48940175fa9aea11bd930cf958dbc58ed7ddd601b28a57959f7e0a6d1f7ce19c
-    # https://github.com/kubeshark/kubeshark/releases/download/50.0/kubeshark_linux_amd64.sha256
-    linux_amd64: sha256:13f14f67e1934ab13f2ed5926d1ba7dc92d172ceabe4dd25686e51b780900287
-    # https://github.com/kubeshark/kubeshark/releases/download/50.0/kubeshark_linux_arm64.sha256
-    linux_arm64: sha256:4e0b39a570f12ddf7c6168fbf3aad6773ea4ee42467431834d121ed7408ffed3
-    # https://github.com/kubeshark/kubeshark/releases/download/50.0/kubeshark_windows_amd64.sha256
-    windows_amd64: sha256:08616c82843ff32a3cf0f018769e1bbb5399674e506e31429b59455243698310
-  '50.4':
-    # https://github.com/kubeshark/kubeshark/releases/download/50.4/kubeshark_darwin_amd64.sha256
-    darwin_amd64: sha256:a7e7102327cc279524d9093d2bf05e72f5942854cafff62a670f46e760de026a
-    # https://github.com/kubeshark/kubeshark/releases/download/50.4/kubeshark_darwin_arm64.sha256
-    darwin_arm64: sha256:2b11f6ee08e748f356a1255d16d837c80d9064970df9f211538df9f240a876fb
-    # https://github.com/kubeshark/kubeshark/releases/download/50.4/kubeshark_linux_amd64.sha256
-    linux_amd64: sha256:12e75282001a54f31f652b42d3528cddda4af7f4cc91c460737753fa29cc41cd
-    # https://github.com/kubeshark/kubeshark/releases/download/50.4/kubeshark_linux_arm64.sha256
-    linux_arm64: sha256:045353a1ea846c37bea685f1333cd6666daef9e369ff1617958e5416c8e1ddc2
-    # https://github.com/kubeshark/kubeshark/releases/download/50.4/kubeshark_windows_amd64.sha256
-    windows_amd64: sha256:fb208ed1f476e0400797056bc8c98f61e253c6216785741e9161f939faac358b
+  # https://github.com/kubeshark/kubeshark/releases/download/v51.0.39/kubeshark_51.0.39_checksums.txt
+  '51.0.39':
+    # https://github.com/kubeshark/kubeshark/releases/download/v51.0.39/kubeshark_51.0.39_darwin_amd64.tar.gz
+    darwin_amd64: sha256:350174d626d6f68adec8551713eeb0ce6b70c51f7e4c7638a826c1c834418282
+    # https://github.com/kubeshark/kubeshark/releases/download/v51.0.39/kubeshark_51.0.39_darwin_arm64.tar.gz
+    darwin_arm64: sha256:f8944512c175a8234056f5774909ceb968cab9e45bf9239ca8f899437365a720
+    # https://github.com/kubeshark/kubeshark/releases/download/v51.0.39/kubeshark_51.0.39_linux_386.tar.gz
+    linux_386: sha256:c73fe204b2147d9d68677c4d3d8015f42dbb87e1e0dba67db55145e5aacbb9b4
+    # https://github.com/kubeshark/kubeshark/releases/download/v51.0.39/kubeshark_51.0.39_linux_amd64.tar.gz
+    linux_amd64: sha256:6b2f5b45d4525f73adc29bedb5e2a3f7f3a6c27edb4911425e8e21d00ae477c7
+    # https://github.com/kubeshark/kubeshark/releases/download/v51.0.39/kubeshark_51.0.39_linux_arm64.tar.gz
+    linux_arm64: sha256:ceae99c882e22344a6df4ccbf5216867c3eb78ba63abcba75ed5fde74c5c9b38
+    # https://github.com/kubeshark/kubeshark/releases/download/v51.0.39/kubeshark_51.0.39_windows_386.tar.gz
+    windows_386: sha256:8d900c35d0668d4b68736e7aece1c29b92fc119a9e19fa701e4773a6495c4c9e
+    # https://github.com/kubeshark/kubeshark/releases/download/v51.0.39/kubeshark_51.0.39_windows_amd64.tar.gz
+    windows_amd64: sha256:d206872d2206e9de9223d800a0353eac3a72bc306f892bc846f617380b31fdf4
+    # https://github.com/kubeshark/kubeshark/releases/download/v51.0.39/kubeshark_51.0.39_windows_arm64.tar.gz
+    windows_arm64: sha256:2e2fca9a7c32cb2b3dc439956e758cbcabf79de11ba2491b7037f56135dede67
