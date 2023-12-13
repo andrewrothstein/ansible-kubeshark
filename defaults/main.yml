@@ -1,8 +1,7 @@
 ---
 # defaults file for kubeshark
-kubeshark_ver: '50.0'
+kubeshark_ver: '50.4'
 kubeshark_mirror: https://github.com/kubeshark/kubeshark/releases/download
-kubeshark_os: '{{ ansible_system | lower }}'
 kubeshark_arch_map:
   aarch64: arm64
   arm64: arm64
@@ -76,3 +75,14 @@ kubeshark_checksums:
     linux_arm64: sha256:4e0b39a570f12ddf7c6168fbf3aad6773ea4ee42467431834d121ed7408ffed3
     # https://github.com/kubeshark/kubeshark/releases/download/50.0/kubeshark_windows_amd64.sha256
     windows_amd64: sha256:08616c82843ff32a3cf0f018769e1bbb5399674e506e31429b59455243698310
+  '50.4':
+    # https://github.com/kubeshark/kubeshark/releases/download/50.4/kubeshark_darwin_amd64.sha256
+    darwin_amd64: sha256:a7e7102327cc279524d9093d2bf05e72f5942854cafff62a670f46e760de026a
+    # https://github.com/kubeshark/kubeshark/releases/download/50.4/kubeshark_darwin_arm64.sha256
+    darwin_arm64: sha256:2b11f6ee08e748f356a1255d16d837c80d9064970df9f211538df9f240a876fb
+    # https://github.com/kubeshark/kubeshark/releases/download/50.4/kubeshark_linux_amd64.sha256
+    linux_amd64: sha256:12e75282001a54f31f652b42d3528cddda4af7f4cc91c460737753fa29cc41cd
+    # https://github.com/kubeshark/kubeshark/releases/download/50.4/kubeshark_linux_arm64.sha256
+    linux_arm64: sha256:045353a1ea846c37bea685f1333cd6666daef9e369ff1617958e5416c8e1ddc2
+    # https://github.com/kubeshark/kubeshark/releases/download/50.4/kubeshark_windows_amd64.sha256
+    windows_amd64: sha256:fb208ed1f476e0400797056bc8c98f61e253c6216785741e9161f939faac358b
