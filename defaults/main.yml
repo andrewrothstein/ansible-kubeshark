@@ -1,6 +1,6 @@
 ---
 # defaults file for kubeshark
-kubeshark_ver: '52.0.0'
+kubeshark_ver: 52.1.9
 kubeshark_mirror: https://github.com/kubeshark/kubeshark/releases/download
 kubeshark_arch_map:
   aarch64: arm64
@@ -47,3 +47,21 @@ kubeshark_checksums:
     windows_amd64: sha256:e96d500ed7ac2076e27e0f6b1d799ed470a7bcf254d7df39e4eeee652130ebca
     # https://github.com/kubeshark/kubeshark/releases/download/v52.0.0/kubeshark_52.0.0_windows_arm64.tar.gz
     windows_arm64: sha256:e64d3bcbc4cb0baa57191d7c6046fe0c86dc975486e674e4ac45781a80100b4b
+  # https://github.com/kubeshark/kubeshark/releases/download/v52.1.9/kubeshark_52.1.9_checksums.txt
+  '52.1.9':
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.1.9/kubeshark_52.1.9_darwin_amd64.tar.gz
+    darwin_amd64: sha256:d11ca1d03334019fd519b81dab7a170023329bb389a0da2fefd717c54c466863
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.1.9/kubeshark_52.1.9_darwin_arm64.tar.gz
+    darwin_arm64: sha256:43f9f01009993a31f3acc011fa2f13eff702f76e4699fde3f06eb7c46d756b1e
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.1.9/kubeshark_52.1.9_linux_386.tar.gz
+    linux_386: sha256:e65fad5374b0d6b9a9e202d3b51b280b049b6ebf117f9a45edd027dc227657e2
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.1.9/kubeshark_52.1.9_linux_amd64.tar.gz
+    linux_amd64: sha256:f810b7cfaa68e020472ce63c6936b0d945e6bacd952899dbf80d6a216f41cb95
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.1.9/kubeshark_52.1.9_linux_arm64.tar.gz
+    linux_arm64: sha256:9e2d0979a285a7edd9a18228229f03a5cb8dda84e4f326d9f9ec7be7096e811a
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.1.9/kubeshark_52.1.9_windows_386.tar.gz
+    windows_386: sha256:94c8e2621e9cfd503d409a8877e6de590d7f0fafd20062c698af870aed39b81c
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.1.9/kubeshark_52.1.9_windows_amd64.tar.gz
+    windows_amd64: sha256:98f4090b3ed5b7361785369c8f9918655b90d3a71d93354884954354bbb56605
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.1.9/kubeshark_52.1.9_windows_arm64.tar.gz
+    windows_arm64: sha256:fff4861ca0470dd1df163e5eabfc235b3b3d034ec50b3d995069f9f370f787c8

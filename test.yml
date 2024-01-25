@@ -1,10 +1,14 @@
 ---
-- hosts: all
-  roles:
-  - role: '{{ playbook_dir }}'
+- name: Testing andrewrothstein.kubeshark
+  hosts: all
   tasks:
-  - command: /usr/local/bin/kubeshark version
-    register: kubeshark_test_output
-  - name: kubeshark version
-    debug:
-      msg: '{{ kubeshark_test_output.stdout }}'
+    - name: Installing andrewrothstein.kubeshark
+      ansible.builtin.include_role:
+        name: '{{ playbook_dir }}'
+    - name: Executing 'kubeshark version'
+      ansible.builtin.command: /usr/local/bin/kubeshark version
+      changed_when: false
+      register: kubeshark_test_output
+    - name: Output from 'kubeshark version'
+      ansible.builtin.debug:
+        msg: '{{ kubeshark_test_output.stdout }}'

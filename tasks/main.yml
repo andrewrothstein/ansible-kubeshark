@@ -16,7 +16,8 @@
   ansible.builtin.stat:
     path: '{{ kubeshark_exe }}'
   register: kubeshark_binary
-- when: not kubeshark_binary.stat.exists
+- name: Downloading and installing kubeshark
+  when: not kubeshark_binary.stat.exists
   block:
     - name: Downloading {{ kubeshark_url }} to {{ kubeshark_tmp_archive }}
       become: true
