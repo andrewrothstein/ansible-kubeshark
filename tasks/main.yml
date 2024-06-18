@@ -1,7 +1,4 @@
 ---
-- name: Install andrewrothstein.unarchivedeps
-  ansible.builtin.include_role:
-    name: andrewrothstein.unarchivedeps
 - name: Resolve platform specific vars
   ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
@@ -12,43 +9,14 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: Look for installation at {{ kubeshark_exe }}
-  ansible.builtin.stat:
-    path: '{{ kubeshark_exe }}'
-  register: kubeshark_binary
-- name: Downloading and installing kubeshark
-  when: not kubeshark_binary.stat.exists
-  block:
-    - name: Downloading {{ kubeshark_url }} to {{ kubeshark_tmp_archive }}
-      become: true
-      become_user: root
-      ansible.builtin.get_url:
-        url: '{{ kubeshark_url }}'
-        dest: '{{ kubeshark_tmp_archive }}'
-        checksum: '{{ kubeshark_checksum }}'
-        mode: '644'
-    - name: Mkdir {{ kubeshark_install_dir }}
-      become: true
-      become_user: root
-      ansible.builtin.file:
-        path: '{{ kubeshark_install_dir }}'
-        state: directory
-        mode: '755'
-    - name: Unarchive {{ kubeshark_tmp_archive }} into {{ kubeshark_install_dir }}
-      become: true
-      become_user: root
-      ansible.builtin.unarchive:
-        remote_src: true
-        src: '{{ kubeshark_tmp_archive }}'
-        dest: '{{ kubeshark_install_dir }}'
-        creates: '{{ kubeshark_exe }}'
-  always:
-    - name: Cleanup
-      become: true
-      become_user: root
-      ansible.builtin.file:
-        path: '{{ kubeshark_tmp_archive }}'
-        state: absent
+- name: Downloading {{ kubeshark_url }} to {{ kubeshark_exe }}
+  become: true
+  become_user: root
+  ansible.builtin.get_url:
+    url: '{{ kubeshark_url }}'
+    dest: '{{ kubeshark_exe }}'
+    checksum: '{{ kubeshark_checksum }}'
+    mode: '755'
 - name: Linking {{ kubeshark_link }} to {{ kubeshark_exe }}
   become: true
   become_user: root
