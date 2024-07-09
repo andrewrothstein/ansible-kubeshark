@@ -1,6 +1,6 @@
 ---
 # defaults file for kubeshark
-kubeshark_ver: 52.3.68
+kubeshark_ver: 52.3.69
 kubeshark_mirror: https://github.com/kubeshark/kubeshark/releases/download
 kubeshark_arch_map:
   aarch64: arm64
@@ -19,3 +19,12 @@ kubeshark_checksums:
     linux_amd64: sha256:57223b84e92cb7bcd2dd8eccd662c3bba4635ffbc61fcc5fc7a89a08ec0f0041
     # https://github.com/kubeshark/kubeshark/releases/download/v52.3.68/kubeshark_linux_arm64.sha256
     linux_arm64: sha256:13721cdf7f1f908ea57bdbcd453bf3cfb173e045496c549e9b36968846353aed
+  '52.3.69':
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.3.69/kubeshark_darwin_amd64.sha256
+    darwin_amd64: sha256:178f53f5ed63b7d6ba3ca45a3a242af8c5df45ddded9e2a53bbb111364ecf6c8
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.3.69/kubeshark_darwin_arm64.sha256
+    darwin_arm64: sha256:e6bf85ee86b579120072a16109e906e1f0c1d91dccc6228628b8e4ced54091f8
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.3.69/kubeshark_linux_amd64.sha256
+    linux_amd64: sha256:b3bc25abefca09221adc02cd6be7bdcd18f43ecc7eb50fa83d48fd5cda5b256d
+    # https://github.com/kubeshark/kubeshark/releases/download/v52.3.69/kubeshark_linux_arm64.sha256
+    linux_arm64: sha256:f7081f5372e39d8e97e399f06e7490a2f3ff63c098419ba0a8e232df4505aaae
