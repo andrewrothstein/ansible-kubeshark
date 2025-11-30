@@ -1,7 +1,7 @@
 ---
 # vars file for kubeshark
-kubeshark_os: '{{ ansible_system | lower }}'
-kubeshark_arch: '{{ kubeshark_arch_map[ansible_architecture] }}'
+kubeshark_os: '{{ ansible_facts["system"] | lower }}'
+kubeshark_arch: '{{ kubeshark_arch_map[ansible_facts["architecture"]] }}'
 kubeshark_platform: '{{ kubeshark_os }}_{{ kubeshark_arch }}'
 kubeshark_url: '{{ kubeshark_mirror }}/v{{ kubeshark_ver }}/kubeshark_{{ kubeshark_platform }}'
 kubeshark_checksum: '{{ kubeshark_checksums[kubeshark_ver][kubeshark_platform] }}'
